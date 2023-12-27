@@ -20,7 +20,7 @@ public class ToyShop implements Iterable<Toy> {
     // Метод для рандомизации и записи в файл, а также вывода на консоль
     public void organizeRaffle(int iterationCount) {
         // проверяем наличие файла
-        File file = new File("Java_Attest/output.txt");
+        File file = new File("Java_toy_shop/output.txt");
         if (!file.exists()) {
             try {
                 file.createNewFile();
@@ -36,7 +36,7 @@ public class ToyShop implements Iterable<Toy> {
                 for (Toy toy : toyQueue) {
                     if (random < toy.getFrequency()) {
                         System.out.println(toy);
-                        writer.write(String.format("Выпала игрушка: %s (ID: %d)\n", toy.getName(), toy.getId()));
+                        writer.write(String.format("The toy fell out: %s (ID: %d)\n", toy.getName(), toy.getId()));
                     }
                 }
             }
